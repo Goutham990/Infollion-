@@ -76,9 +76,10 @@ const QuestionItem = ({ question, index, prefix, onDelete, onUpdate, isParent })
                         key={option}
                         type="button"
                         onClick={() => {
-                          handleChange('type', option);
                           if (option !== 'True/False') {
-                            handleChange('answer', '');
+                            onUpdate({ ...question, type: option, answer: '', children: [] });
+                          } else {
+                            handleChange('type', option);
                           }
                           setIsDropdownOpen(false);
                         }}
