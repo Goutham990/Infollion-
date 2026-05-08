@@ -50,4 +50,4 @@ If you wish to run the React application in development mode with Hot Module Rep
 npm run dev
 ```
 
-This will start the Vite development server (usually on `http://localhost:5173`).
+This will start the Vite development server.
