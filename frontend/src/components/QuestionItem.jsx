@@ -42,8 +42,8 @@ const QuestionItem = ({ question, index, prefix, onDelete, onUpdate, isParent })
         )}
         
         <div className="flex-1 space-y-5">
-          <div className="flex gap-4 items-start">
-            <div className="flex-1">
+          <div className="flex flex-col sm:flex-row gap-4 sm:items-start w-full">
+            <div className="flex-1 w-full">
               <label className="block text-sm font-medium text-[#49454F] dark:text-[#CAC4D0] mb-1.5 ml-1">
                 Question {prefix}
               </label>
@@ -55,11 +55,12 @@ const QuestionItem = ({ question, index, prefix, onDelete, onUpdate, isParent })
                 className="w-full px-4 py-3.5 bg-[#F4F1F8] dark:bg-[#1D1B20] text-[#1D1B20] dark:text-[#E6E0E9] border-b-2 border-[#49454F]/20 dark:border-[#CAC4D0]/20 rounded-t-[4px] focus:ring-0 focus:border-[#6750A4] dark:focus:border-[#D0BCFF] transition-all outline-none placeholder-[#49454F]/50 dark:placeholder-[#CAC4D0]/50"
               />
             </div>
-            <div className="w-56">
-              <label className="block text-sm font-medium text-[#49454F] dark:text-[#CAC4D0] mb-1.5 ml-1">
-                Type
-              </label>
-              <div className="relative" ref={dropdownRef}>
+            <div className="flex gap-3 w-full sm:w-auto items-start">
+              <div className="flex-1 sm:w-48 md:w-56">
+                <label className="block text-sm font-medium text-[#49454F] dark:text-[#CAC4D0] mb-1.5 ml-1">
+                  Type
+                </label>
+                <div className="relative" ref={dropdownRef}>
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -91,19 +92,19 @@ const QuestionItem = ({ question, index, prefix, onDelete, onUpdate, isParent })
                   </div>
                 )}
               </div>
+              
+              <button
+                onClick={() => onDelete(question.id)}
+                className="mt-7 p-2.5 text-[#B3261E] dark:text-[#F2B8B5] hover:bg-[#B3261E]/10 dark:hover:bg-[#F2B8B5]/10 rounded-full transition-colors active:scale-95 shrink-0"
+                title="Delete Question"
+              >
+                <Trash2 className="w-6 h-6" />
+              </button>
             </div>
-            
-            <button
-              onClick={() => onDelete(question.id)}
-              className="mt-7 p-2.5 text-[#B3261E] dark:text-[#F2B8B5] hover:bg-[#B3261E]/10 dark:hover:bg-[#F2B8B5]/10 rounded-full transition-colors active:scale-95"
-              title="Delete Question"
-            >
-              <Trash2 className="w-6 h-6" />
-            </button>
           </div>
 
           {question.type === 'True/False' && (
-            <div className="flex items-center gap-6 bg-[#EADDFF]/30 dark:bg-[#4F378B]/20 p-4 rounded-[16px]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 bg-[#EADDFF]/30 dark:bg-[#4F378B]/20 p-4 rounded-[16px]">
               <label className="text-sm font-medium text-[#1D1B20] dark:text-[#E6E0E9]">Select expected answer:</label>
               <div className="flex gap-6">
                 <label className="flex items-center gap-2 cursor-pointer group">

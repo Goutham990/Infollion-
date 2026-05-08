@@ -98,8 +98,8 @@ function App() {
     return (
       <div className="min-h-screen bg-[#F4F1F8] dark:bg-[#141218] text-[#1D1B20] dark:text-[#E6E0E9] py-10 px-4 transition-colors duration-300">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-medium tracking-tight">Form Submission Preview</h1>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
+            <h1 className="text-2xl sm:text-3xl font-medium tracking-tight">Form Submission Preview</h1>
             <button
               onClick={() => setIsSubmitted(false)}
               className="flex items-center gap-2 px-6 py-2.5 bg-[#EADDFF] dark:bg-[#4F378B] text-[#21005D] dark:text-[#EADDFF] rounded-full hover:bg-[#D0BCFF] dark:hover:bg-[#4F378B]/80 transition-colors shadow-sm font-medium"
@@ -130,8 +130,8 @@ function App() {
         </div>
         
         <div className="bg-[#FEF7FF] dark:bg-[#2B2930] rounded-[28px] shadow-md overflow-hidden transition-colors duration-300">
-          <div className="p-8 pb-6 border-b border-[#CAC4D0] dark:border-[#49454F] flex justify-between items-center">
-            <h1 className="text-3xl font-medium text-[#1D1B20] dark:text-[#E6E0E9] tracking-tight">Dynamic Form Builder</h1>
+          <div className="p-5 sm:p-8 pb-5 sm:pb-6 border-b border-[#CAC4D0] dark:border-[#49454F] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <h1 className="text-2xl sm:text-3xl font-medium text-[#1D1B20] dark:text-[#E6E0E9] tracking-tight">Dynamic Form Builder</h1>
             <button
               onClick={() => setIsSubmitted(true)}
               disabled={questions.length === 0}
@@ -142,7 +142,7 @@ function App() {
             </button>
           </div>
 
-          <div className="p-8">
+          <div className="p-4 sm:p-8">
             <DragDropContext onDragEnd={onDragEnd}>
               <Droppable droppableId="parent-questions" type="PARENT_QUESTION">
                 {(provided) => (
