@@ -1,0 +1,9 @@
+runtime: nodejs20
+
+# Optional: define instance class (F1 is free tier eligible)
+instance_class: F1
+
+# We handle the routing through the Express server
+handlers:
+  - url: /.*
+    script: auto
