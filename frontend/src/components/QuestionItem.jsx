@@ -92,16 +92,17 @@ const QuestionItem = ({ question, index, prefix, onDelete, onUpdate, isParent })
                   </div>
                 )}
               </div>
-              
-              <button
-                onClick={() => onDelete(question.id)}
-                className="mt-7 p-2.5 text-[#B3261E] dark:text-[#F2B8B5] hover:bg-[#B3261E]/10 dark:hover:bg-[#F2B8B5]/10 rounded-full transition-colors active:scale-95 shrink-0"
-                title="Delete Question"
-              >
-                <Trash2 className="w-6 h-6" />
-              </button>
             </div>
+            
+            <button
+              onClick={() => onDelete(question.id)}
+              className="mt-7 p-2.5 text-[#B3261E] dark:text-[#F2B8B5] hover:bg-[#B3261E]/10 dark:hover:bg-[#F2B8B5]/10 rounded-full transition-colors active:scale-95 shrink-0"
+              title="Delete Question"
+            >
+              <Trash2 className="w-6 h-6" />
+            </button>
           </div>
+        </div>
 
           {question.type === 'True/False' && (
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 bg-[#EADDFF]/30 dark:bg-[#4F378B]/20 p-4 rounded-[16px]">
